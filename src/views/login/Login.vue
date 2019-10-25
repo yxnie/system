@@ -35,7 +35,9 @@
           <el-button type="primary" @click="submitForm('ruleForm')"
             >立即登录</el-button
           >
-          <el-button type="primary" @click="register" class="back">立即注册</el-button>
+          <el-button type="primary" @click="register" class="back"
+            >立即注册</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -69,8 +71,8 @@ export default {
             trigger: "blur"
           }
         ],
-        verificationCode : [
-          { required: true, message: "请输入验证码", trigger: "blur" },
+        verificationCode: [
+          { required: true, message: "请输入验证码", trigger: "blur" }
         ]
       }
     };
@@ -95,10 +97,7 @@ export default {
                 });
                 this.$store.state.username = this.ruleForm.username; //用户名存入store
                 this.$store.state.time = res.data[0].date; //登录时间存入store
-                localStorage.setItem(
-                  "name",
-                  JSON.stringify({ user: res })
-                ); //用户名存入localstorage
+                localStorage.setItem("name", JSON.stringify({ user: res })); //用户名存入localstorage
                 this.$router.push("/home"); //跳转回主页
               } else if (res.code === 1) {
                 // 登录失败

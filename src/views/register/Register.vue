@@ -140,12 +140,7 @@ export default {
                   message: res.message,
                   type: "success"
                 });
-                this.$store.state.username = this.ruleForm.username; //用户名存入store
-                localStorage.setItem(
-                  "user",
-                  JSON.stringify({ user: this.ruleForm.username })
-                ); //用户名存入localstorage
-                this.$router.push("/home"); //跳转回主页
+                this.$router.push("/login"); //跳转回登陆
               } else if (res.code === 1) {
                 // 登录失败
                 this.$message.error(res.message);
@@ -243,7 +238,7 @@ export default {
 .form {
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+  margin-top: 160px;
   .login {
     width: 600px;
     height: 326px;

@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    <div class="front" @click="run">欢迎 {{ name.username }} 来到小爱后台管理系统</div>
+    <div class="front">欢迎 {{ name.username }} 来到小爱后台管理系统</div>
     <div class="later">
       <span v-if="nowTime < 6">该睡觉了</span>
       <span v-else-if="nowTime < 12">早上好</span>
@@ -22,10 +22,6 @@ export default {
     };
   },
   methods: {
-    // this.$axios.req()
-    run() {
-      this.$router.push("/login");
-    },
     getTime() {
       this.showTime = this.$dayjs(this.name.date).format("YYYY年MM月DD日H时mm分s秒");
     }
@@ -64,5 +60,6 @@ export default {
   padding: 0 3%;
   color: white;
   font-size: 16px;
+  z-index: 99;
 }
 </style>

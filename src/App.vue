@@ -4,8 +4,4 @@
   </div>
 </template>
 
-<style scoped lang="scss">
-body {
-  background: #f0f2f5;
-}
-</style>
+<style scoped lang="scss"></style>
