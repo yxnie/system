@@ -97,7 +97,7 @@ export default {
                 });
                 this.$store.state.username = this.ruleForm.username; //用户名存入store
                 this.$store.state.time = res.data[0].date; //登录时间存入store
-                localStorage.setItem("name", JSON.stringify({ user: res })); //用户名存入localstorage
+                localStorage.setItem("name", JSON.stringify({ user: res })); //用户存入localstorage
                 this.$router.push("/home"); //跳转回主页
               } else if (res.code === 1) {
                 // 登录失败

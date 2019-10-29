@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Error
+  <div class="all">
+    拜托别乱输入路径，把多余的去掉回到首页
   </div>
 </template>
 
@@ -22,4 +22,11 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.all {
+  text-align: center;
+  margin-top: 200px;
+  font-weight: bold;
+  font-size: 25px;
+}
+</style>

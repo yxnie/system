@@ -135,14 +135,14 @@ export default {
             })
             .then(res => {
               if (res.code === 200) {
-                //登录成功弹框
+                //注册成功弹框
                 this.$message({
                   message: res.message,
                   type: "success"
                 });
                 this.$router.push("/login"); //跳转回登陆
               } else if (res.code === 1) {
-                // 登录失败
+                // 注册失败
                 this.$message.error(res.message);
               }
             })

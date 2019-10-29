@@ -66,12 +66,12 @@ export default {
     margin-bottom: 30px;
   }
   .todo {
-    width: 21% !important;
+    width: 24% !important;
     padding: 10px 0 20px 0;
     margin-bottom: 30px;
   }
   .progressBar {
-    width: 21% !important;
+    width: 18% !important;
     padding-bottom: 20px;
     margin-bottom: 30px;
   }

@@ -16,6 +16,7 @@
         prop="price"
         :sortable="true"
         :sort-method="sortPrice"
+        width="160"
       >
         <template slot-scope="scope">
           <div class="price">
@@ -125,7 +126,7 @@ export default {
     position: relative;
     .symbol {
       position: absolute;
-      left: 75px;
+      left: 20px;
     }
   }
 }
