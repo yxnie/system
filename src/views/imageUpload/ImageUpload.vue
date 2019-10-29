@@ -3,7 +3,13 @@
     <div class="up">
       <div class="title">支持拖拽</div>
       <div class="desc">Element UI自带上传组件</div>
-      <el-upload class="upload-demo" drag action="api/upload" multiple>
+      <el-upload
+        class="upload-demo"
+        drag
+        action="api/upload"
+        multiple
+        :show-file-list="false"
+      >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
         <div class="el-upload__tip" slot="tip">
@@ -24,7 +30,7 @@
           v-model="show"
           :width="200"
           :height="200"
-          url="/upload"
+          url="api/upload"
           :params="params"
           :headers="headers"
           img-format="png"
@@ -36,8 +42,7 @@
 </template>
 
 <script>
-import "babel-polyfill"; // es6 shim
-import myUpload from "vue-image-crop-upload/upload-1.vue";
+import myUpload from "vue-image-crop-upload";
 export default {
   name: "ImageUpload",
   components: {
@@ -63,13 +68,13 @@ export default {
     },
     //复制成功
     cropSuccess(imgDataUrl, field) {
-      console.log(imgDataUrl, field);
+      console.log(field);
       this.imgDataUrl = imgDataUrl;
     },
     //上传成功
     cropUploadSuccess(jsonData, field) {
       console.log(jsonData, field, "成功");
-      this.imgDataUrl = jsonData.files.file;
+      // this.imgDataUrl = jsonData.files.file;
     },
     //上传失败
     cropUploadFail(status, field) {

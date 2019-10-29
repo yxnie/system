@@ -1,13 +1,21 @@
 <template>
   <div>
     <div class="top">
-      <div @click="skip('unread')" class="title">
+      <div
+        @click="skip('unread')"
+        class="title"
+        :class="{ bg: page === 'unread' }"
+      >
         未读消息<span v-if="unread.length">({{ unread.length }})</span>
       </div>
-      <div @click="skip('read')" class="title">
+      <div @click="skip('read')" class="title" :class="{ bg: page === 'read' }">
         已读消息<span v-if="read.length">({{ read.length }})</span>
       </div>
-      <div @click="skip('recycle')" class="title">
+      <div
+        @click="skip('recycle')"
+        class="title"
+        :class="{ bg: page === 'recycle' }"
+      >
         回收站<span v-if="recycle.length">({{ recycle.length }})</span>
       </div>
     </div>
@@ -155,7 +163,10 @@ export default {
 .top {
   display: flex;
   margin: 0 20px;
-  border-bottom: 2px solid rgba(135, 134, 126, 0.35);
+  border-bottom: 3px solid rgba(135, 134, 126, 0.35);
+  .bg {
+    border-bottom: 3px solid blue;
+  }
   .title {
     margin-right: 25px;
     font-size: 18px;
@@ -164,7 +175,10 @@ export default {
     padding: 20px 0;
     position: relative;
     text-align: center;
-    top: 2px;
+    top: 3px;
+    &:hover {
+      border-bottom: 3px solid #5ab1ef;
+    }
   }
 }
 .center {
