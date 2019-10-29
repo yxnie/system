@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="all">
-      <div><el-button type="primary">返回</el-button></div>
+      <div><el-button type="primary" @click="skip">返回</el-button></div>
       <div class="top">
         <div class="title">{{ data.title }}</div>
         <div class="abstract">{{ data.abstract }}</div>
@@ -37,6 +37,9 @@ export default {
         .catch(err => {
           console.log(err);
         });
+    },
+    skip() {
+      this.$router.push("/published");
     }
   },
   mounted() {

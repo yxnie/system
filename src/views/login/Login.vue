@@ -99,7 +99,7 @@ export default {
                 this.$store.state.time = res.data[0].date; //登录时间存入store
                 localStorage.setItem("name", JSON.stringify({ user: res })); //用户存入localstorage
                 this.$router.push("/home"); //跳转回主页
-              } else if (res.code === 1) {
+              } else {
                 // 登录失败
                 this.$message.error(res.message);
                 console.log(res);
